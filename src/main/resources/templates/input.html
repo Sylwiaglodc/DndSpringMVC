@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert New Contact</title>
+</head>
+<body>
+<form th:object="${newContact}" th:action="@{/update/{id}(id=${newContact.id})}" method='POST'>
+Player Name: <input name="name" size="20" th:field="*{name}"> <br />
+Player Phone Number: <input name="phonenumber"size="20" th:field="*{phonenumber}"><br />
+Availability: <input name="availability" size="20" th:field="*{availability}"><br />
+Character Name: <input name="character.charactername" size="20" th:field="*{character.charactername}"><br />
+Character Class: <input name="character.characterclass" size="20" th:field="*{character.characterclass}"><br />
+Character Race:<input name="character.race" size="20" th:field="*{character.race}"><br />
+Character Level:<input name="character.level" size="20" th:field="*{character.level}"><br />
+<input name="submit"type="submit"value="submit"/>
+</form>
+<a href="viewAll">View all Contacts</a>
+</body>
+</html>

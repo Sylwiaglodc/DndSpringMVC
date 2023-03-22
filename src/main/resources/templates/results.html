@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>View All Contacts</title>
+</head>
+<body>
+<form>
+<table>
+<tr th:each="currentContact : ${player}">
+<td th:text="${currentContact.id}"/>
+<td th:text="${currentContact.playername}"/>
+<td th:text="${currentContact.phonenumber}"/>
+<td th:text="${currentContact.availability}"/>
+<td th:text="${currentContact.character.charactername}"/>
+<td th:text="${currentContact.character.characterclass}"/>
+<td th:text="${currentContact.character.race}"/>
+<td th:text="${currentContact.character.level}"/>
+<td><a th:href="@{/edit/{id}(id=${currentPlayer.id})}">Edit</a></td>
+<td><a th:href="@{/delete/{id}(id=${currentPlayer.id})}">Delete</a></td>
+</tr>
+</table>
+</form>
+<a href="../inputPlayer">Add a new contact</a>
+</body>
+</html>
