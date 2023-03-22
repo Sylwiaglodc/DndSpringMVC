@@ -7,20 +7,20 @@
 <body>
 <form>
 <table>
-<tr th:each="currentContact : ${player}">
-<td th:text="${currentContact.id}"/>
-<td th:text="${currentContact.playername}"/>
-<td th:text="${currentContact.phonenumber}"/>
-<td th:text="${currentContact.availability}"/>
-<td th:text="${currentContact.character.charactername}"/>
-<td th:text="${currentContact.character.characterclass}"/>
-<td th:text="${currentContact.character.race}"/>
-<td th:text="${currentContact.character.level}"/>
+<tr th:each="currentPlayer : ${Player}">
+<td th:text="${currentPlayer.id}"/>
+<td th:text="${currentPlayer.playerName}"/>
+<td th:text="${currentPlayer.phoneNumber}"/>
+<td th:text="${currentPlayer.availability}"/>
+<td th:text="${currentPlayer.character.characterName}"/>
+<td th:text="${currentPlayer.character.characterClass}"/>
+<td th:text="${currentPlayer.character.race}"/>
+<td th:text="${currentPlayer.character.level}"/>
 <td><a th:href="@{/edit/{id}(id=${currentPlayer.id})}">Edit</a></td>
 <td><a th:href="@{/delete/{id}(id=${currentPlayer.id})}">Delete</a></td>
 </tr>
 </table>
 </form>
-<a href="../inputPlayer">Add a new contact</a>
+<a href="inputPlayer">Add a new contact1</a>
 </body>
 </html>
